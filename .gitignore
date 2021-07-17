@@ -1,2 +1,6 @@
 **/Builds
+**/build
 **/JuceLibraryCode
+**/JUCE
+**/.vs
+**/.vscode
