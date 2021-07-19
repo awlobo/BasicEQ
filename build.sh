@@ -23,6 +23,17 @@ print_help () {
     echo "Returns 0 unless an invalid option is given or the current directory cannot be read."
 }
 
+function run_by_os() {
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Linux*)     echo "to-do";;
+        Darwin*)    ./build/BasicEQ_artefacts/Standalone/BasicEQ.app/Contents/MacOS/BasicEQ;;
+        CYGWIN*)    build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe;;
+        MINGW*)     build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe;;
+        *)          echo "Unsupported OS"
+    esac
+}
+
 while getopts cbrh opt; do
     case $opt in
         c)
@@ -37,7 +48,7 @@ while getopts cbrh opt; do
         ;;
         r)
             echo -e "${YELLOW_COLOR}RUNNING...${NO_COLOR}"
-            build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe
+            run_by_os
         ;;
         h)
             print_help
