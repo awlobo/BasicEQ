@@ -1,6 +1,7 @@
 # BasicEQ
 
  Audio plugin built with the JUCE Framework. Based on [tutorial](https://www.youtube.com/watch?v=i_Iq4_Kd7Rc)
+<!-- https://youtu.be/i_Iq4_Kd7Rc?t=1791 -->
 
 ## Build & Run
 
