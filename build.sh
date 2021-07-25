@@ -26,7 +26,7 @@ print_help () {
 function run_by_os() {
     unameOut="$(uname -s)"
     case "${unameOut}" in
-        Linux*)     echo "to-do";;
+        Linux*)     ./build/BasicEQ_artefacts/Standalone/BasicEQ;;
         Darwin*)    ./build/BasicEQ_artefacts/Standalone/BasicEQ.app/Contents/MacOS/BasicEQ;;
         CYGWIN*)    build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe;;
         MINGW*)     build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe;;
