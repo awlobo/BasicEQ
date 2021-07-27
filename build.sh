@@ -41,7 +41,7 @@ while getopts cbrh opt; do
             rm -rv build/ && echo -e "${YELLOW_COLOR}CLEAN SUCCESSFUL...${NO_COLOR}"
         ;;
         b)
-            git submodule update --recursive --init
+            git submodule update --recursive --init --force
             echo -e "${YELLOW_COLOR}BUILDING...${NO_COLOR}"
             cmake . -B build
             cmake --build build

@@ -1,8 +1,7 @@
-**/app
-**/build
-**/Builds
-**/JuceLibraryCode
-**/JUCE
-**/.vs
-**/.vscode
+app
+build
+JuceLibraryCode
+JUCE
+.vs
+.vscode
 BasicEQ.jucer
