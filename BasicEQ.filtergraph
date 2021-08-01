@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FILTERGRAPH>
-  <FILTER uid="1" x="0.5" y="0.1">
+  <FILTER uid="1" x="0.49125" y="0.1895161290322581">
     <PLUGIN name="Audio Input" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="246006c0" isInstrument="0"
-            fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="32"
+            fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="2"
             isShell="0"/>
     <STATE>0.</STATE>
     <LAYOUT>
@@ -12,60 +12,31 @@
         <BUS index="0" layout="disabled"/>
       </INPUTS>
       <OUTPUTS>
-        <BUS index="0" layout="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16"/>
-      </OUTPUTS>
-    </LAYOUT>
-  </FILTER>
-  <FILTER uid="2" x="0.25" y="0.1">
-    <PLUGIN name="MIDI Input" descriptiveName="" format="Internal" category="I/O devices"
-            manufacturer="JUCE" version="1.0" file="" uid="a9e4f9eb" isInstrument="0"
-            fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="0"
-            isShell="0"/>
-    <STATE>0.</STATE>
-    <LAYOUT>
-      <INPUTS>
-        <BUS index="0" layout="disabled"/>
-      </INPUTS>
-      <OUTPUTS>
-        <BUS index="0" layout="disabled"/>
+        <BUS index="0" layout="L R"/>
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
   <FILTER uid="3" x="0.50125" y="0.8991935483870968">
     <PLUGIN name="Audio Output" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="724248cb" isInstrument="0"
-            fileTime="0" infoUpdateTime="0" numInputs="16" numOutputs="0"
+            fileTime="0" infoUpdateTime="0" numInputs="2" numOutputs="0"
             isShell="0"/>
     <STATE>0.</STATE>
     <LAYOUT>
       <INPUTS>
-        <BUS index="0" layout="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32"/>
+        <BUS index="0" layout="L R"/>
       </INPUTS>
       <OUTPUTS>
         <BUS index="0" layout="disabled"/>
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="4" x="0.25" y="0.9">
-    <PLUGIN name="MIDI Output" descriptiveName="" format="Internal" category="I/O devices"
-            manufacturer="JUCE" version="1.0" file="" uid="9d5bbb00" isInstrument="0"
-            fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="0"
-            isShell="0"/>
-    <STATE>0.</STATE>
-    <LAYOUT>
-      <INPUTS>
-        <BUS index="0" layout="disabled"/>
-      </INPUTS>
-      <OUTPUTS>
-        <BUS index="0" layout="disabled"/>
-      </OUTPUTS>
-    </LAYOUT>
-  </FILTER>
-  <FILTER uid="5" x="0.47375" y="0.3931451612903226" uiLastX_Normal="1431"
-          uiLastY_Normal="113" uiopen_Normal="1">
+  <FILTER uid="5" x="0.465" y="0.3870967741935484" uiLastX_Normal="1431"
+          uiLastY_Normal="113" uiopen_Normal="1" uiLastX_IO="1785" uiLastY_IO="481"
+          uiopen_IO="0">
     <PLUGIN name="BasicEQ" format="VST3" category="Fx" manufacturer="awlobo"
             version="1.0.0" file="/home/wilkin25/repos/BasicEQ/build/BasicEQ_artefacts/VST3/BasicEQ.vst3"
-            uid="83a6e647" isInstrument="0" fileTime="17afeb36aa8" infoUpdateTime="17b01406e3d"
+            uid="83a6e647" isInstrument="0" fileTime="17b01e3cad8" infoUpdateTime="17b01e9421b"
             numInputs="2" numOutputs="2" isShell="0"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
     <LAYOUT>
@@ -77,27 +48,8 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="9" x="0.13375" y="0.5342741935483871" uiLastX_Normal="1116"
-          uiLastY_Normal="466" uiopen_Normal="0" uiLastX_IO="869" uiLastY_IO="343"
-          uiopen_IO="0">
-    <PLUGIN name="Audio File Player Plugin" format="VST3" category="Fx|Tools"
-            manufacturer="Spyced Concepts" version="1.0.0" file="/home/wilkin25/.vst3/AudioFilePlayerPlugin.vst3"
-            uid="acf46683" isInstrument="0" fileTime="17afeecb2b8" infoUpdateTime="17b01406e3d"
-            numInputs="2" numOutputs="2" isShell="0"/>
-    <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
-    <LAYOUT>
-      <INPUTS>
-        <BUS index="0" layout="L R"/>
-      </INPUTS>
-      <OUTPUTS>
-        <BUS index="0" layout="L R"/>
-      </OUTPUTS>
-    </LAYOUT>
-  </FILTER>
-  <CONNECTION srcFilter="1" srcChannel="6" dstFilter="5" dstChannel="0"/>
-  <CONNECTION srcFilter="1" srcChannel="7" dstFilter="5" dstChannel="1"/>
-  <CONNECTION srcFilter="5" srcChannel="0" dstFilter="3" dstChannel="14"/>
-  <CONNECTION srcFilter="5" srcChannel="1" dstFilter="3" dstChannel="15"/>
-  <CONNECTION srcFilter="9" srcChannel="0" dstFilter="3" dstChannel="0"/>
-  <CONNECTION srcFilter="9" srcChannel="1" dstFilter="3" dstChannel="1"/>
+  <CONNECTION srcFilter="1" srcChannel="0" dstFilter="5" dstChannel="0"/>
+  <CONNECTION srcFilter="1" srcChannel="1" dstFilter="5" dstChannel="1"/>
+  <CONNECTION srcFilter="5" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="5" srcChannel="1" dstFilter="3" dstChannel="1"/>
 </FILTERGRAPH>
