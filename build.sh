@@ -34,6 +34,16 @@ function run_by_os() {
     esac
 }
 
+function run_plugin_host() {
+    if ! [ -f JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost ]
+    then
+        cd JUCE/extras/AudioPluginHost/Builds/LinuxMakefile
+        make
+        cd -
+    fi
+    ./JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost
+}
+
 while getopts cbrh opt; do
     case $opt in
         c)
@@ -50,7 +60,7 @@ while getopts cbrh opt; do
         r)
             echo -e "${YELLOW_COLOR}RUNNING...${NO_COLOR}"
             # run_by_os
-            ./JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost
+            run_plugin_host
         ;;
         h)
             print_help
