@@ -49,7 +49,8 @@ while getopts cbrh opt; do
         ;;
         r)
             echo -e "${YELLOW_COLOR}RUNNING...${NO_COLOR}"
-            run_by_os
+            # run_by_os
+            ./JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost
         ;;
         h)
             print_help
