@@ -1,7 +1,7 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
-BasicEQAudioProcessorEditor::BasicEQAudioProcessorEditor(BasicEQAudioProcessor& p)
+BasicEQAudioProcessorEditor::BasicEQAudioProcessorEditor(BasicEQAudioProcessor &p)
 	: AudioProcessorEditor(&p), audioProcessor(p)
 {
 	// Make sure that before the constructor has finished, you've set the
@@ -13,7 +13,7 @@ BasicEQAudioProcessorEditor::~BasicEQAudioProcessorEditor()
 {
 }
 
-void BasicEQAudioProcessorEditor::paint(juce::Graphics& g)
+void BasicEQAudioProcessorEditor::paint(juce::Graphics &g)
 {
 	// (Our component is opaque, so we must completely fill the background with a solid colour)
 	g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));

@@ -4,13 +4,13 @@
 BasicEQAudioProcessor::BasicEQAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
 	: AudioProcessor(BusesProperties()
-#if ! JucePlugin_IsMidiEffect
-#if ! JucePlugin_IsSynth
-		.withInput("Input", juce::AudioChannelSet::stereo(), true)
+#if !JucePlugin_IsMidiEffect
+#if !JucePlugin_IsSynth
+						 .withInput("Input", juce::AudioChannelSet::stereo(), true)
 #endif
-		.withOutput("Output", juce::AudioChannelSet::stereo(), true)
+						 .withOutput("Output", juce::AudioChannelSet::stereo(), true)
 #endif
-	)
+	  )
 #endif
 {
 }
@@ -58,8 +58,8 @@ double BasicEQAudioProcessor::getTailLengthSeconds() const
 
 int BasicEQAudioProcessor::getNumPrograms()
 {
-	return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-				// so this should be at least 1, even if you're not really implementing programs.
+	return 1; // NB: some hosts don't cope very well if you tell them there are 0 programs,
+			  // so this should be at least 1, even if you're not really implementing programs.
 }
 
 int BasicEQAudioProcessor::getCurrentProgram()
@@ -76,7 +76,7 @@ const juce::String BasicEQAudioProcessor::getProgramName(int index)
 	return {};
 }
 
-void BasicEQAudioProcessor::changeProgramName(int index, const juce::String& newName)
+void BasicEQAudioProcessor::changeProgramName(int index, const juce::String &newName)
 {
 }
 
@@ -108,7 +108,7 @@ void BasicEQAudioProcessor::releaseResources()
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool BasicEQAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
+bool BasicEQAudioProcessor::isBusesLayoutSupported(const BusesLayout &layouts) const
 {
 #if JucePlugin_IsMidiEffect
 	juce::ignoreUnused(layouts);
@@ -118,12 +118,11 @@ bool BasicEQAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) c
 	// In this template code we only support mono or stereo.
 	// Some plugin hosts, such as certain GarageBand versions, will only
 	// load plugins that support stereo bus layouts.
-	if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
-		&& layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
+	if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono() && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
 		return false;
 
-	// This checks if the input layout matches the output layout
-#if ! JucePlugin_IsSynth
+		// This checks if the input layout matches the output layout
+#if !JucePlugin_IsSynth
 	if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
 		return false;
 #endif
@@ -133,7 +132,7 @@ bool BasicEQAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) c
 }
 #endif
 
-void BasicEQAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void BasicEQAudioProcessor::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages)
 {
 	juce::ScopedNoDenormals noDenormals;
 	auto totalNumInputChannels = getTotalNumInputChannels();
@@ -256,13 +255,13 @@ juce::AudioProcessorValueTreeState::ParameterLayout BasicEQAudioProcessor::creat
 		stringArray.add(str);
 	}
 
-	layout.add(std::make_unique <juce::AudioParameterChoice>(
+	layout.add(std::make_unique<juce::AudioParameterChoice>(
 		"LowCut Slope",
 		"LowCut Slope",
 		stringArray,
 		0));
 
-	layout.add(std::make_unique <juce::AudioParameterChoice>(
+	layout.add(std::make_unique<juce::AudioParameterChoice>(
 		"HighCut Slope",
 		"HighCut Slope",
 		stringArray,
@@ -272,7 +271,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout BasicEQAudioProcessor::creat
 }
 
 // This creates new instances of the plugin..
-juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+juce::AudioProcessor *JUCE_CALLTYPE createPluginFilter()
 {
 	return new BasicEQAudioProcessor();
 }
