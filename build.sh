@@ -26,41 +26,50 @@ print_help () {
 function run_by_os() {
     unameOut="$(uname -s)"
     case "${unameOut}" in
-        Linux*)     ./build/BasicEQ_artefacts/Standalone/BasicEQ;;
-        Darwin*)    ./build/BasicEQ_artefacts/Standalone/BasicEQ.app/Contents/MacOS/BasicEQ;;
+        Linux*)
+            if ! [ -f JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost ]
+            then
+                echo -e "${YELLOW_COLOR}COMPILING AUDIO PLUGIN HOST - Linux...${NO_COLOR}"
+                cd JUCE/extras/AudioPluginHost/Builds/LinuxMakefile
+                make
+                cd -
+            fi
+            ./JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost
+            # ./build/BasicEQ_artefacts/Standalone/BasicEQ
+        ;;
+        Darwin*)
+            if ! [ -e JUCE/extras/AudioPluginHost/Builds/MacOSX/build/Debug/AudioPluginHost.app ]
+            then
+                echo -e "${YELLOW_COLOR}COMPILING AUDIO PLUGIN HOST - macOS...${NO_COLOR}"
+                cd JUCE/extras/AudioPluginHost/Builds/MacOSX/
+                xcodebuild -scheme "AudioPluginHost - App"  build
+                cd -
+            fi
+            open JUCE/extras/AudioPluginHost/Builds/MacOSX/build/Debug/AudioPluginHost.app
+            # ./build/BasicEQ_artefacts/Standalone/BasicEQ.app/Contents/MacOS/BasicEQ
+        ;;
         CYGWIN*)    build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe;;
         MINGW*)     build/BasicEq_artefacts/Debug/Standalone/BasicEq.exe;;
         *)          echo "Unsupported OS"
     esac
 }
 
-function run_plugin_host() {
-    if ! [ -f JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost ]
-    then
-        cd JUCE/extras/AudioPluginHost/Builds/LinuxMakefile
-        make
-        cd -
-    fi
-    ./JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost
-}
-
 while getopts cbrh opt; do
     case $opt in
-        c)
+        c)  # clean build folder
             echo -e "${YELLOW_COLOR}CLEANING...${NO_COLOR}"
             rm -rv build/ && echo -e "${YELLOW_COLOR}CLEAN SUCCESSFUL...${NO_COLOR}"
         ;;
-        b)
+        b)  #build plugin
             git submodule update --recursive --init --force
             echo -e "${YELLOW_COLOR}BUILDING...${NO_COLOR}"
             cmake . -B build
             cmake --build build
             echo -e "${YELLOW_COLOR}BUILD COMPLETED...${NO_COLOR}"
         ;;
-        r)
+        r)  # run plugin
             echo -e "${YELLOW_COLOR}RUNNING...${NO_COLOR}"
-            # run_by_os
-            run_plugin_host
+            run_by_os
         ;;
         h)
             print_help
